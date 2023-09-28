@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <script type="text/javascript">
+      async function main() {
+        let pyodide = await loadPyodide();
+        await pyodide.loadPackage("micropip");
+        const micropip = pyodide.pyimport("micropip");
+        await micropip.install("https://files.pythonhosted.org/packages/3c/dc/0ebfe0c9050da64efe036fe2938ab13d5a46bfb47c1f851858d10ce6022d/playwright-1.38.0-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl");
+        // await micropip.install("https://files.pythonhosted.org/packages/2b/cc/ca315a9937889fac9485bd6efd9f9931ca70674212fc10606895c5673d82/pytest_playwright-0.4.2-py3-none-any.whl")
+        await pyodide.runPython(`
+        from playwright.sync_api import Page
+        URL = 'https://www.baidu.com'
+        page.goto(URL)
+        print('111')
+      `);
+      }
+      main();
+    </script>
+  </body>
+</html>
