@@ -2,7 +2,10 @@
 This module contains DuckDuckGoSearchPage,
 the page object for the DuckDuckGo search page.
 """
-
+import micropip
+micropip.install(
+    'https://example.com/files/snowballstemmer-2.0.0-py2.py3-none-any.whl'
+)
 from playwright.sync_api import Page
 from typing import List
 from js import document

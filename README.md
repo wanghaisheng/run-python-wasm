@@ -28,6 +28,13 @@ https://pypi.org/project/playwright/#files
 
 
 
+
+3.
+
+https://github.com/pyodide/pytest-pyodide#running-tests-with-playwright-optional
+
+
+
 https://github.com/sql-js/sql.js
 
 
